@@ -1,0 +1,54 @@
+<mvc:View controllerName="invent.clientes.controller.Overview"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.f"
+	xmlns:card="sap.f.cards"
+	xmlns:w="sap.ui.integration.widgets" displayBlock="true" height="100%">
+
+	<Page title="Invent Software" >
+		
+	<ScrollContainer height="100%" width="100%" vertical="true">
+		
+
+		<f:GridContainer id="grid1" class="sapUiSmallMargin" snapToRow="true">
+			<f:layout>
+				<f:GridContainerSettings rowSize="84px" columnSize="84px" gap="8px" />
+			</f:layout>
+			<f:layoutXS>
+				<f:GridContainerSettings rowSize="84px" columnSize="84px" gap="8px" />
+			</f:layoutXS>
+
+			
+			<GenericTile
+					press="navegarParaLista" header="Lista de clientes" >
+				<layoutData>
+					<f:GridContainerItemLayoutData minRows="2" columns="2" />
+				</layoutData>
+				<TileContent footer="Quantidade de clientes">
+					<NumericContent value="{NumeroDeCliente>/cont}" icon="sap-icon://customer-briefing" />
+				</TileContent>
+			</GenericTile>
+			
+			
+			
+			<GenericTile header="Cadastro de clientes"  press="navegarParaCadastro">
+				<layoutData>
+					<f:GridContainerItemLayoutData minRows="2" columns="2" />
+				</layoutData>
+				<TileContent>
+					<ImageContent src="sap-icon://create-form" />
+				</TileContent>
+			</GenericTile>
+
+
+
+
+		</f:GridContainer>
+	</ScrollContainer>
+		
+		
+		<BusyDialog id="BusyDialog" />
+</Page>
+	
+	
+</mvc:View>

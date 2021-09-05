@@ -1,0 +1,71 @@
+<mvc:View
+		controllerName="invent.clientes.controller.Detail"
+		xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:c="sap.ui.core" xmlns:t="sap.ui.table" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" height="100%">
+    <Page showNavButton="true" navButtonPress=".onNavBack" enableScrolling="true" title="Detalhe do cliente" class="sapUiResponsivePadding--header sapUiResponsivePadding--footer">
+        
+        <headerContent>
+            <Button icon="sap-icon://delete" 
+			type="Reject" 
+            text="Deletar Cliente"
+			tooltip="Naveg"
+            press="deletarCliente"
+            ariaHasPopup="Dialog" />
+
+			<Button icon="sap-icon://edit"
+			type="Emphasized"
+            text="Editar Cadastro"
+			tooltip="Naveg"
+            press="navegarParaEditar" />
+		
+		
+		</headerContent>
+        <content>
+            <VBox fitContainer="true">
+                
+                <f:SimpleForm  id="SimpleFormDisplay480" minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout"  labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2">
+                    <f:content>
+                        <c:Title text="Identidade" />
+                        <Label text="Nome" />
+                        <Text text="{cliente>/nome}" />
+                        <Label text="CPF" />
+                        <Text text="{cliente>/cpf}" />
+                        
+                        <c:Title text="Endereço" />
+                        <Label text="Município" />
+                        <Text text="{cliente>/municipio}" />
+                        <Label text="Rua" />
+                        <Text text="{cliente>/rua}" />
+                        <Label text="CEP" />
+                        <Text text="{cliente>/cep}" />
+                        <Label text="Numero" />
+                        <Text text="{cliente>/numero}" />
+                            <Label text="Bairro" />
+                    <Text text="{cliente>/bairro}" />
+                        <Label text="UF" />
+                    <Text text="{cliente>/estado}" />
+                    </f:content>
+                    <f:content>
+                        <c:Title text="Contato" />
+                        <Label text="Email" />
+                    <Text text="{cliente>/email}" />
+                        <Label text="Telefone" />
+                    <Text text="{cliente>/telefone}" />
+
+
+                        
+                    </f:content>
+                    <f:layoutData>
+                        <FlexItemData shrinkFactor="0" backgroundDesign="Solid" styleClass="sapContrastPlus" />
+                    </f:layoutData>
+                </f:SimpleForm>
+
+               
+
+            </VBox>
+            
+        </content>
+        <BusyDialog id="BusyDialog" />
+    </Page>
+    
+    
+</mvc:View>

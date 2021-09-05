@@ -1,0 +1,108 @@
+<core:View controllerName="invent.clientes.controller.Atualizar"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page title="Cadastro de clientes" showNavButton="true" navButtonPress=".onNavBack">
+
+		<customHeader>
+			<Text text="Name of the Tool" wrapping="false" />
+			<Bar>
+				
+				<contentRight>
+					<Button id="save" icon="sap-icon://save" text="Salvar" type="Emphasized" visible="true" press="handleSavePress" />
+					<Button id="cancel" icon="sap-icon://sys-cancel" type="Reject"  text="Cancelar" visible="true" press=".onNavBack" />
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<VBox class="sapUiSmallMargin">
+			<f:Form id="FormChange480_12120" editable="true">
+				
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
+				</f:layout>
+				<f:FormContainer title="Identidade">
+					<f:formElements>
+						<f:FormElement label="Nome">
+							<f:fields>
+								<Input type="text" placeholder="Digite o nome" value="{cliente>/nome}"  />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="CPF">
+							<f:fields>
+								<MaskInput mask="999.999.999-99" placeholderSymbol="_" placeholder="Digite o CPF" value="{cliente>/cpf}"/>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+				<f:formContainers>
+					<f:FormContainer title="Endereço">
+						<f:formElements>
+
+							<f:FormElement label="CEP {cliente/cep}">
+								<f:fields>
+									<SearchField  id="Cep" width="50%"   search=".buscarEndereco" value="{cliente>/cep}" />								
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Rua">
+								<f:fields>
+									<Input placeholder="Rua" valueLiveUpdate="true" value="{cliente>/rua}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Bairro/Numero">
+								<f:fields>
+									<Input placeholder="Bairro" id="Bairro" value="{cliente>/bairro}" />
+									<Input type="Number" placeholder="Numero" value="{cliente>/numero}" >
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S4" />
+										</layoutData>
+									</Input>
+								</f:fields>
+							</f:FormElement>
+							
+							<f:FormElement label="Estado">
+								<f:fields >
+									<Input placeholder="Estado" value="{cliente>/estado}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Cidade">
+								<f:fields >
+									<Input placeholder="Cidade" value="{cliente>/municipio}"/>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+
+				</f:formContainers>
+			</f:Form>
+			<f:Form id="FormChange480_12120-2" editable="true">
+
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer title="Contato">
+						<f:formElements>
+							<f:FormElement label="Email">
+								<f:fields>
+									<Input placeholder='Email' value="{cliente>/email}" />
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Telefone">
+								<f:fields>
+									<MaskInput mask="(99)99999-9999" placeholderSymbol="_" placeholder="Telefone" value="{cliente>/telefone}"/>
+								</f:fields>
+							</f:FormElement>
+
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</VBox>
+
+		
+
+		
+	</Page>
+</core:View>

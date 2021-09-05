@@ -1,0 +1,25 @@
+{
+  "Invoices": [
+	{
+	  "Codigo": 1,
+	  "Nome": "Kelvin Mateus",
+	  "Cpf": "132.763.996-36",
+	  "Email":"kaxhcar@gmail.com",
+	  "Rua": "Av Independencia",
+	  "Numero": "552",
+	  "Cep":"74640-000",
+	  "Bairro":"Leste vila nova",
+	  "Municipio":"Goiania",
+	  "Uf":"GO",
+	  "Telefone":"62998010102"
+	},
+	{
+	  "Codigo": 2,
+	  "Nome": "Axhcar de Jesus",
+	  "Cpf": "999.999.999.99",
+	  
+	  "ShippedDate": "2015-02-18T00:00:00",
+	  "Status": "B"
+	}
+  ]
+}
