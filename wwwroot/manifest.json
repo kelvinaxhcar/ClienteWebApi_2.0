@@ -1,0 +1,116 @@
+{
+  "_version": "1.12.0",
+  "sap.app": {
+    "id": "invent.clientes",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "invent.clientes.view.App",
+      "type": "XML",
+      "id": "app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.60",
+      "libs": {
+        "sap.m": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "invent.clientes.i18n.i18n",
+          "supportedLocales": [
+            ""
+          ],
+          "fallbackLocale": ""
+        }
+      },
+      "invoice": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "Invoices.json"
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "invent.clientes.view",
+        "controlId": "app",
+        "controlAggregation": "pages"
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "overview",
+          "target": "overview"
+        },
+        {
+          "pattern": "detail/{id}",
+          "name": "detail",
+          "target": "detail"
+        },
+        {
+          "pattern": "lista",
+          "name": "listaName",
+          "target": "listaTarget" 
+        },
+        {
+          "pattern": "cadastroDeCliente",
+          "name": "cadastroDeCliente",
+          "target": "cadastroDeCliente"
+        },
+        {
+          "pattern": "Atualizar/{id}",
+          "name": "AtualizarName",
+          "target": "AtualizarTarget"
+        }
+      ],
+
+
+      
+      "targets": {
+        "overview": {
+          "viewId": "overview",
+          "viewName": "Overview"
+        },
+        "detail": {
+          "viewId": "detail",
+          "viewName": "Detail"
+        },
+        "listaTarget": {
+          "viewId": "lista",
+          "viewName": "Lista"
+        },
+        "cadastroDeCliente": {
+          "viewId": "cadastroDeCliente",
+          "viewName": "Inserir"
+        }
+        ,
+        "AtualizarTarget": {
+          "viewId": "atualizar",
+          "viewName": "Atualizar"
+        }
+      }
+    }
+  }
+}
